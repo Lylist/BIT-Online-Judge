@@ -1,6 +1,7 @@
 ﻿namespace BITOJ.Core.Cache.Settings
 {
     using Newtonsoft.Json;
+    using NLog;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -30,6 +31,7 @@
         }
 
         private static readonly string SettingsDirectory = @".\Settings";
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         private static string MakeFilename(string name)
         {
@@ -48,6 +50,14 @@
             m_settingsCache = new Dictionary<string, SettingItemInfo>();
             m_disposed = false;
             m_dirty = false;
+
+            // 检查底层文件系统是否包含设置集目录。
+            if (!Directory.Exists(SettingsDirectory))
+            {
+                // 写入日志信息。
+                Log.Warn("Settings directory not found. Creating settings directory.");
+                Directory.CreateDirectory(SettingsDirectory);
+            }
         }
 
         ~FileSystemSettingProvider()
@@ -85,11 +95,28 @@
             }
             catch
             {
+                // 写入日志信息。
+                Log.Error("Unable to read setting file: \"{0}\".", filename);
+
                 return false;
             }
 
             // 将目标文件内容反序列化为对象数据。
-            SettingItemInfo item = new SettingItemInfo(JsonConvert.DeserializeObject(content, typeof(T)), typeof(T));
+            object obj = null;
+            try
+            {
+                obj = JsonConvert.DeserializeObject(content, typeof(T));
+            }
+            catch
+            {
+                // 写入日志信息。
+                Log.Error("Unable to convert JSON to object data. Setting file: \"{0}\"", filename);
+
+                return false;
+            }
+
+            // 将设置项内容写入缓存中。
+            SettingItemInfo item = new SettingItemInfo(obj, typeof(T));
             if (m_settingsCache.ContainsKey(name))
             {
                 // 指定设置项已经处于设置集缓存中。执行覆盖。
@@ -287,7 +314,9 @@
                 }
                 catch
                 {
-
+                    // 写入日志信息。
+                    Log.Error("Unable to flush setting item: \"{0}\" from cache to local file system.",
+                        item.Key);
                 }
             }
 
