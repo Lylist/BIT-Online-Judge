@@ -1,5 +1,6 @@
 ﻿namespace BITOJ.Core.Resolvers.Masks
 {
+    using NLog;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -9,6 +10,14 @@
     /// </summary>
     internal sealed class MaskInterpreter
     {
+        private static readonly Logger Log;
+
+        static MaskInterpreter()
+        {
+            // 初始化日志记录器。
+            Log = LogManager.GetCurrentClassLogger();
+        }
+
         private MaskTokenReader m_reader;
         private ICollection<IMaskTokenHandler> m_handlers;
 
@@ -65,6 +74,9 @@
         /// <returns>解释结果。</returns>
         public string Interpret()
         {
+            // 写入日志信息。
+            Log.Debug("Interpreting mask: \"{0}\".", BaseReader.Mask);
+
             StringBuilder builder = new StringBuilder();
             m_reader.SetOffset(OffsetPositions.Begin);
 
@@ -74,7 +86,10 @@
                 builder.Append(InterpretToken(token));
             }
 
-            return builder.ToString();
+            string result = builder.ToString();
+            Log.Debug("Interpreting complete. Result = \"{0}\".", result);
+
+            return result;
         }
     }
 }
