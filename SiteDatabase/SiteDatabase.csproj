@@ -11,6 +11,7 @@
     <AssemblyName>BITOJ.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -35,6 +35,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BITOJ.Data.xml</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +53,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -66,13 +71,22 @@
   <ItemGroup>
     <Compile Include="Entities\ProblemCategoryEntity.cs" />
     <Compile Include="Entities\ProblemCategoryRelationEntity.cs" />
+    <Compile Include="Entities\SubmissionEntity.cs" />
+    <Compile Include="Entities\SubmissionLanguage.cs" />
+    <Compile Include="Entities\SubmissionVerdict.cs" />
     <Compile Include="Entities\TeamProfileEntity.cs" />
     <Compile Include="Entities\UserAuthorizationEntity.cs" />
     <Compile Include="Entities\UserGroup.cs" />
     <Compile Include="Entities\UserProfileEntity.cs" />
     <Compile Include="Entities\UserTeamRelationEntity.cs" />
+    <Compile Include="Entities\SubmissionVerdictStatus.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
+    <Compile Include="Models\UserSex.cs" />
+    <Compile Include="Models\UserSubmissionStatisticsModel.cs" />
     <Compile Include="ProblemCategoryDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubmissionDataContext.cs" />
+    <Compile Include="SubmissionQueryHandle.cs" />
     <Compile Include="UserDataContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +96,13 @@
     <Content Include="Databases\CategoryDb_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CategoryDb.mdf</DependentUpon>
+    </Content>
+    <Content Include="Databases\SubmissionsDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Databases\SubmissionsDb_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>SubmissionsDb.mdf</DependentUpon>
     </Content>
     <Content Include="Databases\UserDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
