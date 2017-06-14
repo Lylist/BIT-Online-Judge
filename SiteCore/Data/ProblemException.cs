@@ -17,7 +17,7 @@
         /// </summary>
         /// <param name="entry">要使用的 ProblemEntry 对象。</param>
         /// <exception cref="NullReferenceException"/>
-        public ProblemException(ProblemEntry entry) : base($"编号为 {entry.ProblemID} 的题目出现错误。")
+        public ProblemException(ProblemEntry entry) : base($"编号为 {entry.ProblemId} 的题目出现错误。")
         {
             Problem = entry;
         }

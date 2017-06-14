@@ -9,7 +9,7 @@
         /// 使用给定的 ProblemEntry 对象初始化 InvalidProblemException 的新实例。
         /// </summary>
         /// <param name="entry">要使用的 ProblemEntry 对象。</param>
-        public InvalidProblemException(ProblemEntry entry) : base(entry, $"编号为 {entry.ProblemID} 的题目无效。")
+        public InvalidProblemException(ProblemEntry entry) : base(entry, $"编号为 {entry.ProblemId} 的题目无效。")
         { }
 
         /// <summary>

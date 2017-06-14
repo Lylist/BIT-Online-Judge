@@ -115,6 +115,6 @@ namespace BITOJ.Data
         /// <summary>
         /// 获取用户权限数据集。
         /// </summary>
-        protected virtual DbSet<UserAuthorizationEntity> UserAuthorization { get; }
+        protected virtual DbSet<UserAuthorizationEntity> UserAuthorization { get; set; }
     }
 }

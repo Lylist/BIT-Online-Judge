@@ -64,12 +64,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ProblemCategoryEntity.cs" />
+    <Compile Include="Entities\ProblemCategoryRelationEntity.cs" />
     <Compile Include="Entities\UserAuthorizationEntity.cs" />
     <Compile Include="Entities\UserGroup.cs" />
+    <Compile Include="ProblemCategoryDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDataContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Databases\CategoryDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Databases\CategoryDb_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CategoryDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Databases\UserDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

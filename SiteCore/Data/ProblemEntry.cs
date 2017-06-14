@@ -11,14 +11,14 @@
         /// <summary>
         /// 获取或设置题目的 ID。该 ID 包括但不限于 BITOJ 的题目 ID 格式。
         /// </summary>
-        public string ProblemID { get; set; }
+        public string ProblemId { get; set; }
 
         /// <summary>
         /// 初始化 ProblemEntry 类的新实例。
         /// </summary>
         public ProblemEntry()
         {
-            ProblemID = string.Empty;
+            ProblemId = string.Empty;
         }
     }
 }

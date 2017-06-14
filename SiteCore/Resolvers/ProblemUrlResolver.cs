@@ -74,7 +74,7 @@
             if (entry == null)
                 throw new ArgumentNullException(nameof(entry));
 
-            ProblemUrlResolverRule rule = GetRule(entry.ProblemID);
+            ProblemUrlResolverRule rule = GetRule(entry.ProblemId);
             if (rule == null)
                 throw new InvalidProblemException(entry);
 
