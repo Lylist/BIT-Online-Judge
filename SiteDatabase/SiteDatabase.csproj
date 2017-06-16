@@ -80,6 +80,7 @@
     <Compile Include="Entities\UserProfileEntity.cs" />
     <Compile Include="Entities\UserTeamRelationEntity.cs" />
     <Compile Include="Entities\SubmissionVerdictStatus.cs" />
+    <Compile Include="Models\TeamProfileModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Models\UserSex.cs" />
     <Compile Include="Models\UserSubmissionStatisticsModel.cs" />

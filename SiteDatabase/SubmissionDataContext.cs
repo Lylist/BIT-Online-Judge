@@ -71,6 +71,11 @@ namespace BITOJ.Data
                 // 使用用户名进行筛选。
                 temp = temp.Where(entity => entity.Username == data.Username);
             }
+            if (data.UseTeamId)
+            {
+                // 使用队伍 ID 进行筛选。
+                temp = temp.Where(entity => entity.TeamId == data.TeamId);
+            }
             if (data.UseVerdictResult)
             {
                 // 使用 Judge 结果进行筛选。

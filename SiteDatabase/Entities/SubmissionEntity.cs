@@ -35,6 +35,11 @@
         public string Username { get; set; }
 
         /// <summary>
+        /// 获取或设置队伍 ID 。
+        /// </summary>
+        public int TeamId { get; set; }
+
+        /// <summary>
         /// 获取或设置该提交所对应的题目 ID。
         /// </summary>
         public string ProblemId { get; set; }
@@ -60,6 +65,11 @@
         public SubmissionVerdict VerdictResult { get; set; }
 
         /// <summary>
+        /// 获取或设置 Judge 返回的额外信息。
+        /// </summary>
+        public string VerdictMessage { get; set; }
+
+        /// <summary>
         /// 初始化 SubmissionEntity 类的新实例。
         /// </summary>
         public SubmissionEntity()
@@ -69,11 +79,13 @@
             CreationTimestamp = DateTime.Now;
             VerdictTimestamp = null;
             Username = string.Empty;
+            TeamId = 0;
             ProblemId = string.Empty;
             CodeFilename = string.Empty;
             Language = SubmissionLanguage.GnuCPlusPlus;
             VerdictStatus = SubmissionVerdictStatus.Pending;
             VerdictResult = SubmissionVerdict.Unknown;
+            VerdictMessage = string.Empty;
         }
     }
 }

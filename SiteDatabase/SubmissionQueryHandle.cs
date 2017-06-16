@@ -29,6 +29,11 @@
         public string Username { get; set; }
 
         /// <summary>
+        /// 获取或设置要查询的用户提交的队伍 ID 。
+        /// </summary>
+        public int TeamId { get; set; }
+
+        /// <summary>
         /// 获取或设置要查询的用户提交的题目 ID。
         /// </summary>
         public string ProblemId { get; set; }
@@ -57,6 +62,11 @@
         /// 获取或设置一个值，该值指示是否使用用户名进行查询。
         /// </summary>
         public bool UseUsername { get; set; }
+
+        /// <summary>
+        /// 获取或设置一个值，该值指示是否使用队伍 ID 进行查询。
+        /// </summary>
+        public bool UseTeamId { get; set; }
 
         /// <summary>
         /// 获取或设置一个值，该值指示是否使用题目 ID 进行查询。
@@ -89,6 +99,7 @@
             UseId = false;
             UseTimePeriod = false;
             UseUsername = false;
+            UseTeamId = false;
             UseProblemId = false;
             UseLanguage = false;
             UseVerdictResult = false;
