@@ -1,4 +1,4 @@
-﻿namespace BITOJ.Core.Cache.Settings
+﻿namespace BITOJ.Common.Cache.Settings
 {
     using System;
 

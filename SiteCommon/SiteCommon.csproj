@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E9DCE430-A097-4FED-B214-2F398C95321B}</ProjectGuid>
+    <ProjectGuid>{2F99CA8B-A543-481E-82A6-9660EB45466A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BITOJ.Core</RootNamespace>
-    <AssemblyName>BITOJ.Core</AssemblyName>
+    <RootNamespace>BITOJ.Common</RootNamespace>
+    <AssemblyName>BITOJ.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\BITOJ.Core.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\BITOJ.Common.xml</DocumentationFile>
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -35,9 +35,6 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.10\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,27 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\InvalidProblemException.cs" />
-    <Compile Include="Data\ProblemHandle.cs" />
-    <Compile Include="Data\ProblemException.cs" />
+    <Compile Include="Cache\Settings\FileSystemSettingProvider.cs" />
+    <Compile Include="Cache\Settings\ISettingProvider.cs" />
+    <Compile Include="Collections\IPriorityQueue.cs" />
+    <Compile Include="Collections\PriorityQueue.cs" />
+    <Compile Include="Collections\PriorityQueueComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resolvers\Masks\MaskInterpreter.cs" />
-    <Compile Include="Resolvers\Masks\MaskToken.cs" />
-    <Compile Include="Resolvers\Masks\IMaskTokenHandler.cs" />
-    <Compile Include="Resolvers\Masks\MaskTokenReader.cs" />
-    <Compile Include="Resolvers\Masks\OffsetPositions.cs" />
-    <Compile Include="Resolvers\ProblemUrlResolver.cs" />
-    <Compile Include="Resolvers\ProblemUrlResolverRule.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SiteCommon\SiteCommon.csproj">
-      <Project>{2f99ca8b-a543-481e-82a6-9660eb45466a}</Project>
-      <Name>SiteCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SiteDatabase\SiteDatabase.csproj">
-      <Project>{d7d2b6ff-9809-4991-b583-d8a319aa14d3}</Project>
-      <Name>SiteDatabase</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
