@@ -1,6 +1,6 @@
 ﻿namespace BITOJ.Core.Resolvers
 {
-    using BITOJ.Core.Cache.Settings;
+    using BITOJ.Common.Cache.Settings;
     using BITOJ.Core.Data;
     using BITOJ.Core.Resolvers.Masks;
     using System;
@@ -63,13 +63,13 @@
         { }
 
         /// <summary>
-        /// 解析指定 ProblemEntry 对象的全局统一定位符（URL）。
+        /// 解析指定 ProblemHandle 对象的全局统一定位符（URL）。
         /// </summary>
-        /// <param name="entry">待解析的 ProblemEntry 对象。</param>
-        /// <returns>给定 ProblemEntry 对象所对应的全局统一定位符（URL）。</returns>
+        /// <param name="entry">待解析的 ProblemHandle 对象。</param>
+        /// <returns>给定 ProblemHandle 对象所对应的全局统一定位符（URL）。</returns>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="InvalidProblemException"/>
-        public string Get(ProblemEntry entry)
+        public string Get(ProblemHandle entry)
         {
             if (entry == null)
                 throw new ArgumentNullException(nameof(entry));

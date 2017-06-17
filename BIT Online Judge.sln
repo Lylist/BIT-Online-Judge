@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCore", "SiteCore\SiteCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteDatabase", "SiteDatabase\SiteDatabase.csproj", "{D7D2B6FF-9809-4991-B583-D8A319AA14D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCommon", "SiteCommon\SiteCommon.csproj", "{2F99CA8B-A543-481E-82A6-9660EB45466A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D7D2B6FF-9809-4991-B583-D8A319AA14D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7D2B6FF-9809-4991-B583-D8A319AA14D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7D2B6FF-9809-4991-B583-D8A319AA14D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F99CA8B-A543-481E-82A6-9660EB45466A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F99CA8B-A543-481E-82A6-9660EB45466A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F99CA8B-A543-481E-82A6-9660EB45466A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F99CA8B-A543-481E-82A6-9660EB45466A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

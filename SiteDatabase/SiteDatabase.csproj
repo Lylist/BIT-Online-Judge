@@ -84,7 +84,11 @@
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Models\UserSex.cs" />
     <Compile Include="Models\UserSubmissionStatisticsModel.cs" />
+    <Compile Include="ProblemEntryParts.cs" />
+    <Compile Include="ProblemArchieveManager.cs" />
+    <Compile Include="ProblemEntryHandle.cs" />
     <Compile Include="ProblemCategoryDataContext.cs" />
+    <Compile Include="Models\ProblemConfigurationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubmissionDataContext.cs" />
     <Compile Include="SubmissionQueryHandle.cs" />
@@ -124,6 +128,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SiteCommon\SiteCommon.csproj">
+      <Project>{2f99ca8b-a543-481e-82a6-9660eb45466a}</Project>
+      <Name>SiteCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
