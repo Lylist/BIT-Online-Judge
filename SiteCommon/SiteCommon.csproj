@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="Cache\Settings\FileSystemSettingProvider.cs" />
     <Compile Include="Cache\Settings\ISettingProvider.cs" />
+    <Compile Include="Collections\IPriorityQueue.cs" />
+    <Compile Include="Collections\PriorityQueue.cs" />
+    <Compile Include="Collections\PriorityQueueComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

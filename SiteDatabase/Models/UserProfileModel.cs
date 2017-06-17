@@ -32,6 +32,12 @@
         public string Organization { get; set; }
 
         /// <summary>
+        /// 获取或设置用户的 Rating 值。
+        /// </summary>
+        [JsonProperty("rating")]
+        public int Rating { get; set; }
+
+        /// <summary>
         /// 获取或设置用户提交统计信息模型。
         /// </summary>
         [JsonProperty("sub_stat")]
@@ -47,6 +53,7 @@
             Sex = UserSex.Unknown;
             ImagePath = string.Empty;
             Organization = string.Empty;
+            Rating = 0;
             SubmissionStatistics = new UserSubmissionStatisticsModel();
         }
     }

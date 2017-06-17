@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContestDataContext.cs" />
+    <Compile Include="Entities\ContestEntity.cs" />
     <Compile Include="Entities\ProblemCategoryEntity.cs" />
     <Compile Include="Entities\ProblemCategoryRelationEntity.cs" />
     <Compile Include="Entities\SubmissionEntity.cs" />
@@ -80,6 +82,10 @@
     <Compile Include="Entities\UserProfileEntity.cs" />
     <Compile Include="Entities\UserTeamRelationEntity.cs" />
     <Compile Include="Entities\SubmissionVerdictStatus.cs" />
+    <Compile Include="Models\ContestAuthorizationModel.cs" />
+    <Compile Include="Models\ContestAuthorizationMode.cs" />
+    <Compile Include="Models\ContestConfigurationModel.cs" />
+    <Compile Include="Models\ContestParticipationMode.cs" />
     <Compile Include="Models\TeamProfileModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Models\UserSex.cs" />
@@ -101,6 +107,13 @@
     <Content Include="Databases\CategoryDb_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CategoryDb.mdf</DependentUpon>
+    </Content>
+    <Content Include="Databases\ContestDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Databases\ContestDb_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ContestDb.mdf</DependentUpon>
     </Content>
     <Content Include="Databases\SubmissionsDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

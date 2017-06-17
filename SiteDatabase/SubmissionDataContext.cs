@@ -85,6 +85,8 @@ namespace BITOJ.Data
             return temp.ToList();
         }
 
+        // TODO: 为 SubmissionDataContext 添加分页查询支持。
+
         /// <summary>
         /// 更新给定的用户提交记录实体数据。
         /// </summary>

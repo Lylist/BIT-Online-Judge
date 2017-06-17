@@ -49,7 +49,7 @@
         /// </summary>
         /// <param name="directory">目标题目的题目目录。</param>
         /// <exception cref="ArgumentNullException"/>
-        internal ProblemEntryHandle(string directory)
+        public ProblemEntryHandle(string directory)
         {
             m_problemDirectory = directory;
             m_resourceDirectory = string.Concat(directory, "\\", ProblemResourcesDirectoryName);

@@ -83,6 +83,8 @@
             return Directory.GetDirectories(m_archieveDirectory);
         }   
 
+        // TODO: 为 ProblemArchieveManager 添加分页查询支持。
+
         /// <summary>
         /// 在本地题目库中创建一道新的题目。
         /// </summary>
