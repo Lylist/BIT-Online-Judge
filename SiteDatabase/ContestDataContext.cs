@@ -20,6 +20,20 @@ namespace BITOJ.Data
         }
 
         /// <summary>
+        /// 将给定的比赛实体数据添加至数据库中。
+        /// </summary>
+        /// <param name="entity">要添加的比赛实体。</param>
+        /// <exception cref="ArgumentNullException"/>
+        public void AddContest(ContestEntity entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
+            Contests.Add(entity);
+            SaveChanges();
+        }
+
+        /// <summary>
         /// 按比赛 ID 查询比赛实体对象。
         /// </summary>
         /// <param name="contestId">要查询的比赛 ID 。</param>
@@ -66,6 +80,19 @@ namespace BITOJ.Data
         }
 
         // TODO: 为比赛数据上下文添加分页查询支持。
+
+        /// <summary>
+        /// 从数据库中移除给定的比赛数据实体。
+        /// </summary>
+        /// <param name="entity">要移除的比赛实体对象。</param>
+        /// <exception cref="ArgumentNullException"/>
+        public void RemoveContest(ContestEntity entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
+            Contests.Remove(entity);
+        }
 
         /// <summary>
         /// 获取或设置比赛数据集。
