@@ -301,6 +301,7 @@ namespace BITOJ.Data
                 throw new ArgumentNullException(nameof(entity));
 
             UserProfiles.Remove(entity);
+            SaveChanges();
         }
 
         /// <summary>
@@ -314,6 +315,7 @@ namespace BITOJ.Data
                 throw new ArgumentNullException(nameof(entity));
 
             TeamProfiles.Remove(entity);
+            SaveChanges();
         }
 
         /// <summary>
